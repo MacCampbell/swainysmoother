@@ -1,9 +1,9 @@
 Package: swainysmoother
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A Method for Identifying High Fst Genomic Regions
 Version: 0.1
 Date: 2016-07-26
-Author: Who wrote it
+Author: Adapted from Eric Anderson's original material by Mac Campbell
 Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
 License: What license is it under?
