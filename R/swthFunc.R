@@ -78,7 +78,7 @@ permSNPsSingleChrom <- function(c,x) {
 
 #dyn.load("/Users/tanya/Desktop/Science Fair/wksmooth.so")
 #dyn.load("/Users/Mac/rstudio/swainysmoother/src/wksmooth.so")
-dyn.load("/home/mac/swth/src/wksmooth.so")
+dyn.load("/home/mac/swainysmoother/src/wksmooth.so")
 
 wksmooth <- function(
 	G,  # x-positions of the data

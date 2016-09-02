@@ -6,14 +6,19 @@
 library(dplyr)
 library(stringr)
 library(tidyr)
+args = commandArgs(trailingOnly=TRUE)
 
 #set your working directory
 #setwd("/home/mac/freshwater/combinedBigCreek")
 #setwd("/home/mac/freshwater/combinedBigCreekSanLuis")
 #setwd("/home/mac/freshwater/combinedBigCreekGabriel")
-setwd("/home/mac/freshwater/combinedBigCreekMal")
+#setwd("/home/mac/freshwater/combinedBigCreekMal")
 
+setwd(args[1])
 #The size of each population needs to be specified
+popSize1<-as.numeric(args[2])
+popSize2<-as.numeric(args[3])
+
 #popSize1<-12 #bigCreek comparison
 #popSize2<-14
 
@@ -23,8 +28,8 @@ setwd("/home/mac/freshwater/combinedBigCreekMal")
 #popSize1<-14
 #popSize2<-10 #San Gabriel
 
-popSize1<-14
-popSize2<-18 # Mal
+#popSize1<-14
+#popSize2<-18 # Mal
 
 #we need a genotype file, as from ANGSD, be careful because there may be an extra tabular column
 genos<-read.table("./out.geno", sep="\t")
@@ -194,4 +199,4 @@ final<-tbl_df(select(allData, chrom, left, right, length, contig_idx, site, Pop1
 filteredFinal<-final %>% na.omit
 #or filter(!is.na(left))
 #desired output for one pop
-write.table(filteredFinal,file="convertedData.txt")
+write.table(filteredFinal,file="./out/convertedData.txt")

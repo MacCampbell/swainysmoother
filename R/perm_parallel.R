@@ -7,7 +7,7 @@
 
 # read in necessary functions
 #source("/Users/Mac/rstudio/swainysmoother/trout/swthFunc.R")
-source("/home/mac/swainysmoother/R/swthFunc.R")
+#source("/home/mac/swainysmoother/R/swthFunc.R")
 
 # read in the data
 
@@ -17,7 +17,7 @@ source("/home/mac/swainysmoother/R/swthFunc.R")
 #load("/home/mac/freshwater/combinedBigCreek/data.rda")
 #load("/home/mac/freshwater/combinedBigCreekSanLuis/data.rda")
 #load("/home/mac/freshwater/combinedBigCreekGabriel/data.rda")
-load("/home/mac/freshwater/combinedBigCreekMal/data.rda")
+#load("/home/mac/freshwater/combinedBigCreekMal/data.rda")
 
 # drop the Z chromosome from the data set
 autosomes <- swth.SNPs[swth.SNPs$Chromosome!="Z",]
@@ -53,3 +53,4 @@ assign(var.name,
 
 # then we save that variable to an rda file.  Note that the symbol is the value of var.name:
 save(list=c(paste(var.name)), file=paste(var.name,".rda", sep=""), compress="xz")
+#save(list=c(paste(var.name)), file=paste($dir,"/out/",var.name,".rda", sep=""), compress="xz")

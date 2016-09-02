@@ -1,29 +1,30 @@
 # get a list of chromosomes in the order that we want them in
 #this won't overide an existing .rda file!
+args = commandArgs(trailingOnly=TRUE)
 
 #CHR <- c("1","1A","1B","2","3","4","4A","5","6","7","8","9","10","11","12","13","14","15","17","18","19","20","21","22","23","24","25","26","27","28","LG2","LGE22")
 #CHR <- c("omy01", "omy02", "omy03", "omy04")
 CHR <- c("omy01", "omy02", "omy03", "omy04", "omy05", "omy06", "omy07", "omy08", "omy09", "omy10", "omy11", "omy12", "omy13", "omy14", "omy15", "omy16",  "omy17", "omy18", "omy19", "omy20", "omy21", "omy22", "omy23", "omy24", "omy25", "omy26", "omy27", "omy28", "omy29")
 
-REPS <- 10000  # we need this to form the file names
+REPS <- as.numeric(args[1])  # we need this to form the file names
 
 #setwd("/home/mac/swth/trout/")
 #setwd("/home/mac/freshwater/combinedBigCreek/swainy")
 #setwd("/home/mac/freshwater/combinedBigCreekSanLuis/swainy")
 #setwd("/home/mac/freshwater/combinedBigCreekGabriel/swainy")
-setwd("/home/mac/freshwater/combinedBigCreekMal/swainy")
+setwd(args[2])
 #load("/Users/tanya/Desktop/Science Fair/swth_snps.rda")
 #load("/home/mac/freshwater/combinedBigCreek/data.rda")
 #load("/home/mac/freshwater/combinedBigCreekSanLuis/data.rda")
 #load("/home/mac/freshwater/combinedBigCreekGabriel/data.rda")
-load("/home/mac/freshwater/combinedBigCreekMal/data.rda")
+load("./out/data.rda")
 for(i in CHR) {
-	load(file.path("./",paste("chr_", i, "_quants_", REPS, ".rda", sep="")))
+	load(file.path("./out",paste("chr_", i, "_quants_", REPS, ".rda", sep="")))
 }
 
 
 # now, let's also get the observed values and the x values:
-source("/home/mac/swainysmoother/R/swthFunc.R")
+source("~/swainysmoother/R/swthFunc.R")
 
 
 autosomes <- swth.SNPs[swth.SNPs$Chromosome!="Z",]
