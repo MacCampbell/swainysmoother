@@ -1,16 +1,17 @@
 # this is script that computes statistics for each SNP and also
 # aggregates those into contig specific measures as needed
-
+args = commandArgs(trailingOnly=TRUE)
+setwd(args[1])
 # first get the data:
 # Set to your own working directory:
 #setwd("/Users/eriq/Documents/work/assist/kristenruegg/SWTH_genome_analysis_for_paper")
 #setwd("/home/mac/freshwater/combinedBigCreek")
 #setwd("/home/mac/freshwater/combinedBigCreekSanLuis/")
 #setwd("/home/mac/freshwater/combinedBigCreekGabriel")
-setwd("/home/mac/freshwater/combinedBigCreekMal")
+#setwd("/home/mac/freshwater/combinedBigCreekMal")
 # load the data we need:
 #load("inputs_and_scripts/swth_snps_mapped_to_ZF.rda")
-load("data.rda")
+load("./out/data.rda")
 
 #Mac, kept naming the same
 
@@ -87,7 +88,7 @@ contig.stats <-lapply(SNP.stats, agg.contig)
 
 
 # now save those variables in an Rda we can load later as needed
-save(SNP.stats, contig.stats, file="SNP_and_Contig_Stats.rda", compress="xz")
+save(SNP.stats, contig.stats, file="./out/SNP_and_Contig_Stats.rda", compress="xz")
 
 
 
