@@ -1,9 +1,11 @@
 #! /bin/bash
 # This script will feed variables to all the other scripts. It needs the following to be specified:
 # Working directory, popsize 1, popsize 2, nreps, nprocessors
-#usage ./driveSwainySmoother.sh /home/mac/swainysmoother/exampleData/ 12 14 10 5
+# usage ./driveSwainySmoother.sh /home/mac/swainysmoother/exampleData/ 12 14 10 5
 # for example data ./driveSwainySmoother.sh "/home/mac/swainysmoother/exampleData" 2 2 10 5
 # this will make a /home/mac/swainysmoother/exampleData/out directory with output in it
+# is designed to work all the way through with 10000
+# mac@swc-megabox-dt:~/swainysmoother/bashScripts$ ./driveSwainySmoother.sh "/home/mac/freshwater/combinedBigCreek" 12 14 10000 10
 
 dir=$1; # /home/mac/swainysmoother/exampleData
 pop1=$2; # 12
@@ -42,4 +44,10 @@ Rscript --vanilla ../R/compile_parallel_and_compute_observed.R $nreps $dir
 # Step 6, basic popgen
 Rscript --vanilla ../R/BasicPopGenStatistics.R $dir
 
+# Step 7, make figures (not elegantly done)
+Rscript --vanilla ../R/multiChromoFigure.R $dir
+Rscript --vanilla ../R/multiChromoFigure-11-20.R $dir
+Rscript --vanilla ../R/multiChromoFigure-21-29.R $dir
 
+# Step 8, retrieve high Fst SNP locations
+Rscript --vanilla ../R/retrieveHighFstSnps.R $dir

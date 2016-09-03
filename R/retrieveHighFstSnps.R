@@ -1,16 +1,17 @@
 #obtain SNPs that exceeds null model of no spatial auto-correlation
+args = commandArgs(trailingOnly=TRUE)
 
 library(dplyr)
 #setwd("/home/mac/swth/trout")
 #setwd("/home/mac/freshwater/combinedBigCreek/")
 #setwd("/home/mac/freshwater/combinedBigCreekSanLuis")
 #setwd("/home/mac/freshwater/combinedBigCreekGabriel")
-setwd("/home/mac/freshwater/combinedBigCreekMal")
-
-load("data.rda")
-load("./swainy/PermAndObs_10000.rda")
+#setwd("/home/mac/freshwater/combinedBigCreekMal")
+setwd(args[1])
+load("./out/data.rda")
+load("./out/PermAndObs_10000.rda")
 pob <- PermAndObs_10000
-load("SNP_and_Contig_Stats.rda")
+load("./out/SNP_and_Contig_Stats.rda")
 
 zf.cl <- ZF.Chrom.Lengths
 
@@ -62,8 +63,8 @@ for( C in names(pob)) {
   dff<-tbl_df(df)
   SNPS<-dff %>% mutate(diff=fsts-perm) %>% filter(diff > 0)
   #gives us where the blue line > orange line.
-  write(C,file="exceededSnps.txt",append=TRUE)
-  write.table(SNPS,file="exceededSnps.txt",append=TRUE,sep="\t")
+  write(C,file="./out/exceededSnps.txt",append=TRUE)
+  write.table(SNPS,file="./out/exceededSnps.txt",append=TRUE,sep="\t")
 }
 
 #plot(kx, fsts)

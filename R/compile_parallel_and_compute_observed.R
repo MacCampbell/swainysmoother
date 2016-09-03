@@ -51,6 +51,6 @@ assign(paste("PermAndObs", REPS, sep="_"), PermAndObs)
 
 save(
 	list=c(paste("PermAndObs", REPS, sep="_")),
-	file=paste("PermAndObs_", REPS, ".rda", sep=""),
+	file=paste("./out/PermAndObs_", REPS, ".rda", sep=""),
 	compress="xz"
 )

@@ -29,7 +29,7 @@ load("./out/SNP_and_Contig_Stats.rda")
 #load("IslandStartAndEnds.rda")
 #Doesn't apply...
 
-pdf("./out/chromo1-10.pdf")
+pdf("./out/chromo11-20.pdf")
 
 
 
@@ -185,8 +185,8 @@ autosome.y.max <- max(sapply(pob[autosomes], function(x) max(x$Obs$Fst$yhat, x$P
 
 #for( C in names(pob)) { #autosomes) {
 #for ( C in c("omy01")) {
-for ( C in c("omy01", "omy02", "omy03", "omy04", "omy05", "omy06", "omy07","omy08", "omy09","omy10")) {
-#for ( C in c("omy11","omy12","omy13","omy14","omy15","omy16","omy17","omy18","omy19","omy20")) {
+#for ( C in c("omy01", "omy02", "omy03", "omy04", "omy05", "omy06", "omy07","omy08", "omy09","omy10")) {
+for ( C in c("omy11","omy12","omy13","omy14","omy15","omy16","omy17","omy18","omy19","omy20")) {
 #for ( C in c("omy21","omy22","omy23","omy24","omy25","omy26","omy27","omy28","omy29")) {
 	y <- SNP.stats[[C]]  # I could add a filter on MAFs here if desired
 	MAF <- (y$Pop1.f1 + y$Pop2.f1) / (y$Pop1.f1 + y$Pop1.f2 + y$Pop2.f1 + y$Pop2.f2)
