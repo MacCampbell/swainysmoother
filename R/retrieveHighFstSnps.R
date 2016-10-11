@@ -9,8 +9,10 @@ library(dplyr)
 #setwd("/home/mac/freshwater/combinedBigCreekMal")
 setwd(args[1])
 load("./out/data.rda")
-load("./out/PermAndObs_10000.rda")
-pob <- PermAndObs_10000
+#load("./out/PermAndObs_10000.rda")
+#pob <- PermAndObs_10000
+load("./out/PermAndObs_25000.rda")
+pob <- PermAndObs_25000
 load("./out/SNP_and_Contig_Stats.rda")
 
 zf.cl <- ZF.Chrom.Lengths

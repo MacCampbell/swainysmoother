@@ -17,9 +17,9 @@ setwd(args[1])
 load("./out/data.rda")
 rownames(ZF.Chrom.Lengths) <- ZF.Chrom.Lengths$Chromo  # give these some rownames
 #load("inputs_and_scripts/PermAndObs_25000_all.rda")
-load("./out/PermAndObs_10000.rda")
+load("./out/PermAndObs_25000.rda")
 #for variable names
-pob <- PermAndObs_10000
+pob <- PermAndObs_25000
 
 # and get the snp Fst stats etc:
 #load("inputs_and_scripts/SNP_and_Contig_Stats.rda")

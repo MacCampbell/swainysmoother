@@ -2,7 +2,7 @@
 
 for f in *.sorted.bam;
 	do
-		samtools mpileup -f ../omyV5.fasta  $f > "`basename $f .sorted.bam`.pileup"
+		samtools mpileup -f ../omyV6Chr.fasta  $f > "`basename $f .sorted.bam`.pileup"
 	done
 
 for f in *.pileup;
