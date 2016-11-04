@@ -2,7 +2,7 @@
 
 for f in *.sorted.bam;
 	do
-		samtools mpileup -f ../omyV6Chr.fasta  $f > "`basename $f .sorted.bam`.pileup"
+		samtools mpileup -f /home/mac/data/OmyGenomeV06/omyV6Chr.fasta  $f > "`basename $f .sorted.bam`.pileup"
 	done
 
 for f in *.pileup;
