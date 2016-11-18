@@ -24,6 +24,8 @@ gunzip -c genotypes.geno.gz | cut -f 1-28 > out.geno
 ~/swainysmoother/bashScripts$ ./driveSwainySmoother.sh "/home/mac/freshwater/combinedBigCreek" 12 14 10000 8
 7. Inside the specificied directory, a new subdirectory "out" will have been created containing the necessary files for multiChromoFigure.R and retrieveHighFstSnps.R
 
+##Whole Genome Resequencing Data
+Whole genome resequencing data is not continuous in the amount of coverage over a genome. To work with 10X coverage whole genome resequencing data, I have altered some of the swainysmoother scripts. The original processPileup.sh filters for 10X, and with the data I worked with this did not produce many overlaps of any length between individuals. Therefore, I made a processPileup5x.sh file (see exampleWGS directory). Furthermore, the swainysmoother "swainyPrepper" script will spend a long time looking for overlap with very small fragments of continuous coverage, so I put together a simple bash/baseR script pair to filter .dat files (exampleWGS directory, subDat.sh, sub.R). I examined the length of segments of continuous coverage with the "evaluateDat" scripts in exampleWGS. These steps are going to be fairly unique to each case examined. I also created a "driveSwainySmootherWGS.sh" script to run "swainyPrepperWGS.R" and produce results with the 5x filtered data.
 
 
 
