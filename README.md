@@ -1,11 +1,6 @@
 # swainysmoother
 A method for detecting high Fst genomic regions adapted from Ruegg et al. (2014), 10.1111/mec.12842. 
-[I'm an inline-style link](https://academic.oup.com/jhered/advance-article/doi/10.1093/jhered/esab049/6356224?searchresult=1#:~:text=https%3A//doi.org/10.1093/jhered/esab049)
-
-
-Applied in [10.1093/jhered/esab049.] (https://academic.oup.com/jhered/advance-article/doi/10.1093/jhered/esab049/6356224?searchresult=1#:~:text=https%3A//doi.org/10.1093/jhered/esab049)
-
-
+[Applied in 10.1093/jhered/esab049](https://academic.oup.com/jhered/advance-article/doi/10.1093/jhered/esab049/6356224?searchresult=1#:~:text=https%3A//doi.org/10.1093/jhered/esab049)
 
 ## Fst Outliers
 This method is to identify genomic regions that are elevated in Fst from RADseq data between a pair of populations. Coverage and SNP density are not uniform in experiments of this type. The method accounts for loci length and SNP density to clearly identify genomic regions in which Fst is elevated. See the original Ruegg et al. (2014) paper for details. Original code by Eric Anderson is available here: http://datadryad.org/resource/doi:10.5061/dryad.73gj4
